@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>826,3619</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,3659</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractToExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -62,9 +62,18 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractToExcel" sap:VirtualizedContainerService.HintSize="530,3554" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="ExtractToExcel" sap:VirtualizedContainerService.HintSize="530,3816" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
       <Variable x:TypeArguments="x:Int32" Default="1" Name="pageNumber" />
@@ -75,6 +84,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ExtractToExcel process has started&quot;]" />
     <ui:BuildDataTable DataTable="[out_AllDataTable]" DisplayName="Build DataTable to store all infos from all the pages" sap:VirtualizedContainerService.HintSize="488,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;New_x0020_column_x0020_0&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;New_x0020_column_x0020_1&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;New_x0020_column_x0020_2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Căutare automobil pe mobile.de/ro – găsiţi vehicule rapid şi simplu" sap:VirtualizedContainerService.HintSize="488,3363" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
@@ -118,7 +128,7 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Data primei'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="412,226" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="2012">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Data min'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="412,226" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="2012">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.mobile.de/ro/c%C4%83utare-detaliat%C4%83/vhc:car/pg:dspcar" DesignTimeRectangle="535, 540, 66, 29" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' type='number' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEYAAAAhCAYAAABk391mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIhSURBVGhD7ZnLjoIwFIbnpX0KnqLxDTRxI1ufgJ1rLyHujCujnunfC22BU0SMcab9kiYjraX/xylO4IcyvWQxDIGYuq5ps9nQcrmkxWKRRENWZEZ2n0YMOlarFW23W9rv90k1ZEZ2X04jBtYw4HA40PF4TKohM7LDgaURg5I6nU50Pp/per3S/X5PoiErMiM7HFgaMdhvl8tFDU4NZEZ2OLAEYmAvVZCdFZNitViQ3Yp5PB5ZjOVNYioSsxnN/DavTB9DJdS4Yh3+v/At+GLAeDG9AWsqCwgSUtnfZJqYuqSCvepGzlDlfCmTxNTrIl4VqpoKKqU3NbYQJFQl4ZjefsL7sp7PbEXbZ+S74+583TlxtLWtX7wwk8RU84ETm1AIaEM7EaEYNVcgWfZj7qo0gUFYhdycroL1+FfuY58VU5RyqRZfTCgpiqpCLbAzp9fX0HfsCSaJ0VcsctLOVmLEKIF2K7SxN3K/9YvR62mPdePHMEnMmJtvVEzwd4iqSqYqOnOiLzjH60wTA9RCh3+u42KMAP/KSulCztnerv44bs5gLXKe0n39aaaLUegFBeXbuvcMiQE6tGs6YDi3mEcqRtFei/zVqsabeZOY/0cWw5DFMGQxDFkMQxbDwIrBg+Db7WY+pQey9z4Mx6uD3W5nPqUHsve+PrEv3PACCo/2UgFZkZl94QbQAWsoKey3FBqyIrMvJXjmm3FkMRGymF6IfgEgF1d2la60TAAAAABJRU5ErkJggg==" InformativeScreenshot="2bc47e215b8b3fed1cc2726fb57cb6fe.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Căutare automobil pe mobile.de/ro – găsiţi vehicule rapid şi simplu' /&gt;" SearchSteps="FuzzySelector, Image">
                   <uix:TargetAnchorable.Anchors>
@@ -129,7 +139,7 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Data primei'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="412,226" sap2010:WorkflowViewState.IdRef="NTypeInto_4" Text="2018">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Data max'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="412,226" sap2010:WorkflowViewState.IdRef="NTypeInto_4" Text="2018">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.mobile.de/ro/c%C4%83utare-detaliat%C4%83/vhc:car/pg:dspcar" DesignTimeRectangle="909, 540, 66, 29" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' idx='2' tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' aaname='' tag='INPUT' type='number' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEYAAAAhCAYAAABk391mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIjSURBVGhD7ZlLbsIwFEW7aVaRVUTsACQmyZQVZMYYgixmiBECXnP9y3McB4IrhGqfymqC3dfcE9utkh/KjJLFBHDECCFou93Ser2m1WqVRENWZEZ2jhWDjs1mQ7vdjg6HQ1INmZGdy7FiYA0D2ral4/GYVENmZIcDgxWDKXU6neh8PtP1eqX7/Z5EQ1ZkRnY4MFgxWG+Xy0UOTg1kRnY4MDhiYC9VkN0R83g85AE+THG2GJA9ixnBE6O/zxPTlLRYLJxWNrovhP6ZonL/X/gWosU0S4goqOb5RE0FBC2f2fleosSIqvClGLScpzPnS4kSUxfTs0LOpqImeJPHy5JKudRKarovHPfihKon+80YI599zn6fX1N+qs/98XOIEuMG81Gh1AX7S46L0WF4iG4PQl9TKbGSwSwM1ez3LSX7nX3ss2Kcu8fEyI3Y3PFpeB2v5lidGbU5UWLmLyU+thcjBepxHmYj5y0gxlt2tn1YjLqQ1zbfKTHhuzpcGm4drybqhATPJEoMkBf3wp/rSTH6mPeLquxq8jHAHReq6ewp3bXUfMiLRIuRyDveXSRrfRjFtBigQ9umZTu1uw2Z1fFrgmEdbOLDMc/5GzH/kCwmQBYTIIsJkMUEyGICBMXgQfDtdtNn6YHsow/D8epgv9/rs/RA9tHXJ+aFG15AmcedKYCsyOy9cOMS0AFrmFJYbyk0ZEVmLgU4YjI9dillXLKYUYh+AThrWA49w0pwAAAAAElFTkSuQmCC" InformativeScreenshot="4934845fbf530156af4495eb059da577.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Căutare automobil pe mobile.de/ro – găsiţi vehicule rapid şi simplu' /&gt;" SearchSteps="FuzzySelector, Image">
                   <uix:TargetAnchorable.Anchors>
@@ -151,7 +161,7 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="aaname" DisplayName="Get Attribute 'INPUT'" sap:VirtualizedContainerService.HintSize="412,134" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="aaname" DisplayName="Get Attribute for 'Afisare rezultate' button" sap:VirtualizedContainerService.HintSize="412,134" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
               <ui:GetAttribute.Result>
                 <OutArgument x:TypeArguments="x:String">[buttonAaname]</OutArgument>
               </ui:GetAttribute.Result>
@@ -166,7 +176,7 @@
                 </ui:Target>
               </ui:GetAttribute.Target>
             </ui:GetAttribute>
-            <Assign sap:VirtualizedContainerService.HintSize="412,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Assign noPages" sap:VirtualizedContainerService.HintSize="412,61" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[noPages]</OutArgument>
               </Assign.To>
@@ -174,7 +184,7 @@
                 <InArgument x:TypeArguments="x:Int32">[Integer.parse(buttonAaname.Replace(".","").split(" "c).Last)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="412,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap2010:Annotation.AnnotationText="" DisplayName="Assign noPages mod 50" sap:VirtualizedContainerService.HintSize="412,61" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[noPages]</OutArgument>
               </Assign.To>
@@ -223,7 +233,7 @@
                     </uix:NExtractData.Target>
                   </uix:NExtractData>
                   <ui:MergeDataTable Destination="[out_AllDataTable]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[ExtractDataTable]" />
-                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign DisplayName="Assign page number" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[pageNumber]</OutArgument>
                     </Assign.To>
@@ -250,8 +260,9 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVDhPtZPPaxNREMeXVKQXS2pasILWhAqlIEVN04u0TY9txWJP9iCmWGlBpCJ4sXrS0INQT0Kl9SLYi0YP4sVD6MFIEGLIf5BNyCb7drObza9N3M3Xt9NWVFKxBweWGYb9fubt2+8IThiv7p1QVi9+YUvdYJEwVNOGpmkolUowDIOyruvUU1XVkhn7mBZFN4m1p5fPKvcHY2ylH+xWF5R3a9CbIGG1WkWtVqNcLpeptwdBQZY/iZmMR1AenM+wldM4LECWZeQkaUcg4f7zC8AR1et1NBoN2LaNSqXys1csFgkgSRLaAkockM/naaKqKkgkErAsiybH43EO0KAoSnuA+n4NXI/p6SkMD5/D0NAgOjpcWFgIYXQ0AH5tCIVuoMJP4wxpC/jOARMT4/B4uhGLfUYwOI7OzqOIRqOYmZlCb68H2WyWn0I9GDA2dgmBgJ9XwNzcVfh8Z6heXl4isCiK9El/Bfj9F0g0O3sFXm8/1YuLN9HTc/w/Ayz+onOBAwM+Ek1OBuF2d1E9P38NLpeAdDp9MKBqA1tbm9h4sYFms4nt7ddYf7YO0zQRibxFOPwEuVyOvCCwu97fAI4PNOc/7oVjnv1wdsIBtlotMMZ2faA+9Cf+BBzCyt8E/fn1k3yZdnYBx/4VYBcK8gfuhT7aSOPl7T7l0chXducU2JvHrGjaKU3XU1yQ4kLKfJ2px8UpPn0zmUweEQRB+AGw4f5/aVBQ+gAAAABJRU5ErkJggg==" InformativeScreenshot="3f5d102f1a9a07e1fce8608e7e7fddf0.png" Selector="&lt;html app='msedge.exe' title='Căutare automobil pe mobile.de/ro – găsiţi vehicule rapid şi simplu'/&gt;" Url="https://www.mobile.de/ro/c%C4%83utare-detaliat%C4%83/vhc:car/pg:dspcar" />
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVDhPtZPPaxNREMeXVKQXS2pasILWhAqlIEVN04u0TY9txWJP9iCmWGlBpCJ4sXrS0INQT0Kl9SLYi0YP4sVD6MFIEGLIf5BNyCb7drObza9N3M3Xt9NWVFKxBweWGYb9fubt2+8IThiv7p1QVi9+YUvdYJEwVNOGpmkolUowDIOyruvUU1XVkhn7mBZFN4m1p5fPKvcHY2ylH+xWF5R3a9CbIGG1WkWtVqNcLpeptwdBQZY/iZmMR1AenM+wldM4LECWZeQkaUcg4f7zC8AR1et1NBoN2LaNSqXys1csFgkgSRLaAkockM/naaKqKkgkErAsiybH43EO0KAoSnuA+n4NXI/p6SkMD5/D0NAgOjpcWFgIYXQ0AH5tCIVuoMJP4wxpC/jOARMT4/B4uhGLfUYwOI7OzqOIRqOYmZlCb68H2WyWn0I9GDA2dgmBgJ9XwNzcVfh8Z6heXl4isCiK9El/Bfj9F0g0O3sFXm8/1YuLN9HTc/w/Ayz+onOBAwM+Ek1OBuF2d1E9P38NLpeAdDp9MKBqA1tbm9h4sYFms4nt7ddYf7YO0zQRibxFOPwEuVyOvCCwu97fAI4PNOc/7oVjnv1wdsIBtlotMMZ2faA+9Cf+BBzCyt8E/fn1k3yZdnYBx/4VYBcK8gfuhT7aSOPl7T7l0chXducU2JvHrGjaKU3XU1yQ4kLKfJ2px8UpPn0zmUweEQRB+AGw4f5/aVBQ+gAAAABJRU5ErkJggg==" InformativeScreenshot="3f5d102f1a9a07e1fce8608e7e7fddf0.png" Selector="&lt;html app='msedge.exe' title='Căutare automobil pe mobile.de/ro*' /&gt;" Url="https://www.mobile.de/ro/c%C4%83utare-detaliat%C4%83/vhc:car/pg:dspcar" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;ExtractToExcel process has ended successfully&quot;]" />
   </Sequence>
 </Activity>
